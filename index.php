@@ -39,8 +39,9 @@ include 'db.php';
         $phone = $_POST['phone'];
         $age = $_POST['age'];
         $pass = $_POST['pass'];
+        $selectOption = $_POST['cars'];
 
-        $insert = "INSERT INTO `input_submit`(`name`, `email`, `phone`, `age`, `password`) VALUES ('$name','$email','$phone','$age','$pass')";
+        $insert = "INSERT INTO `input_submit`(`name`, `email`, `phone`, `age`, `password`, `selectValue`) VALUES ('$name','$email','$phone','$age','$pass','$selectOption')";
 
         $insertQuery = mysqli_query($connection, $insert);
 

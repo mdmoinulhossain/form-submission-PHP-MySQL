@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 03:58 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jun 11, 2022 at 02:04 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,16 +34,18 @@ CREATE TABLE `input_submit` (
   `email` varchar(50) NOT NULL,
   `phone` int(14) NOT NULL,
   `age` int(2) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `selectValue` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `input_submit`
 --
 
-INSERT INTO `input_submit` (`id`, `date_auto`, `name`, `email`, `phone`, `age`, `password`) VALUES
-(1, '2022-06-10 14:48:28', 'moinul', 'moinul@gmail.com', 1681894386, 26, '100#'),
-(2, '2022-06-10 14:50:31', 'hossain', 'hossain@gmail.com', 1681894386, 26, '100@');
+INSERT INTO `input_submit` (`id`, `date_auto`, `name`, `email`, `phone`, `age`, `password`, `selectValue`) VALUES
+(1, '2022-06-10 14:48:28', 'moinul', 'moinul@gmail.com', 1681894386, 26, '100#', ''),
+(2, '2022-06-10 14:50:31', 'hossain', 'hossain@gmail.com', 1681894386, 26, '100@', ''),
+(3, '2022-06-11 12:03:06', 'Zahid', 'xahid@gmail.com', 1254798963, 50, '789654', 'opel');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +65,7 @@ ALTER TABLE `input_submit`
 -- AUTO_INCREMENT for table `input_submit`
 --
 ALTER TABLE `input_submit`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
