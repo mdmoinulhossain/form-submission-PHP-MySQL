@@ -29,9 +29,30 @@
         }
     </style>
 </head>
+<?php
+include 'db.php';
+
+    if(isset($_POST['submit'])){
+
+        $name = $_POST['nameSend'];
+        $email = $_POST['emailSend'];
+        $phone = $_POST['phone'];
+        $age = $_POST['age'];
+        $pass = $_POST['pass'];
+
+        $insert = "INSERT INTO `input_submit`(`name`, `email`, `phone`, `age`, `password`) VALUES ('$name','$email','$phone','$age','$pass')";
+
+        $insertQuery = mysqli_query($connection, $insert);
+
+        echo"successfully Submitted";
+
+        // for closing db connection
+        mysqli_close($connection);
+    }
+?>
 <body>
     <main class="main_body">
-        <section class="form_body">
+        <section class="form_body" method="POST" >
             <form action="#" method="post" enctype="multipart/form-data" class="form">
                 <span>
                     <label for="name">Name:</label>
@@ -126,7 +147,7 @@
                 </span>
                 <br/>
                 <br/>
-                <input type="button" value="Submit" name="submit">
+                <button type="submit" value="Submit" name="submit">Submit</button>
             </form>
         </section>        
     </main>
