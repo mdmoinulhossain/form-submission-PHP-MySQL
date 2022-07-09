@@ -12,13 +12,25 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .main_body{
-            background-color: #F0F8FF;
+        body{
+            background-image: url("background.jpg"); /* The image used */
+            background-color: rgba(0,0,0,0.5); /* Used if the image is unavailable */
+            height: 500px; /* You must set a specified height */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-attachment: fixed;
+            background-size: cover; /* Resize the background image to cover the entire container */
         }
+        
+        .main_body{
+            color: #fff;
+            background-color: rgba(0,0,0,0.7);            
+        }
+        
         .form_body{
             display: flex;
             justify-content: center;
-            margin: 30px 0;
+            padding: 30px 0;
         }
         .form{
             display: flex;
@@ -26,6 +38,10 @@
         }
         .form span{
             margin: 10px 0;
+        }
+        label{
+            font-weight: bold;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -55,6 +71,8 @@ include 'db.php';
     <main class="main_body">
         <section class="form_body" method="POST" >
             <form action="#" method="post" enctype="multipart/form-data" class="form">
+             <h1>All Input form submitting</h1>
+             <span>===============================</span>
                 <span>
                     <label for="name">Name:</label>
                     <input type="text" name="nameSend" id="name" />
