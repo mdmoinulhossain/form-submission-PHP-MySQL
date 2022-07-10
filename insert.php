@@ -8,10 +8,23 @@ include 'db.php';
         $phone = $_POST['phone'];
         $age = $_POST['age'];
         $pass = $_POST['pass'];
-        $color = $_POST['color'];
         $selectOption = $_POST['cars'];
+        $color = $_POST['color'];        
+        $birthDay = $_POST['date'];
+        $appDay = $_POST['appDate'];
+        $time = $_POST['time'];
+        $checkbox = $_POST['vehicles'];
+        $radioBtn = $_POST['fav_language'];
 
-        $insert = "INSERT INTO `input_submit`(`name`, `email`, `phone`, `age`, `password`, `selectValue`) VALUES ('$name','$email','$phone','$age','$pass','$selectOption')";
+        $textArea = $_POST['myReview'];
+        $week = $_POST['weekInput'];
+        $month = $_POST['monthInput'];
+        $url = $_POST['urlInput'];
+        $range = $_POST['rangeInput'];
+        $image = $_POST['imageInput'];
+        $file = $_POST['fileInput'];
+
+        $insert = "INSERT INTO `input_submit`(`name`, `email`, `phone`, `age`, `password`, `cars`, `color`, `date`, `dateof_appointment`, `time`, `vehicles`, `language`) VALUES ('$name','$email','$phone','$age','$pass','$selectOption','$color','$birthDay','$appDay','$time','$checkbox', '$radioBtn')";
 
         $insertQuery = mysqli_query($connection, $insert);
 
