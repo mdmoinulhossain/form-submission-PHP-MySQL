@@ -13,6 +13,7 @@ include 'db.php';
         $birthDay = $_POST['date'];
         $appDay = $_POST['appDate'];
         $time = $_POST['time'];
+
         $checkbox = $_POST['vehicles'];
         $radioBtn = $_POST['fav_language'];
 
@@ -33,4 +34,13 @@ include 'db.php';
         // for closing db connection
         mysqli_close($connection);
     }
+
+    // if(isset($_POST['radioInsert'])){
+    //     $radioBtn = $_POST['fav_language'];
+    //     $insert = "INSERT INTO `radio`(`language`) VALUES ('$radioBtn')";
+    //     $insertQuery = mysqli_query($connection, $insert);
+    //     mysqli_close($connection);
+    //     echo"successfully languages submit";
+
+    // }
 ?>
