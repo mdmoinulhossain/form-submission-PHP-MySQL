@@ -35,6 +35,8 @@ include 'db.php';
         mysqli_close($connection);
     }
 
+    // extra Functions
+    // Radio button
     // if(isset($_POST['radioInsert'])){
     //     $radioBtn = $_POST['fav_language'];
     //     $insert = "INSERT INTO `radio`(`language`) VALUES ('$radioBtn')";
@@ -43,4 +45,30 @@ include 'db.php';
     //     echo"successfully languages submit";
 
     // }
+
+
+    // Select Option
+    
+    //  if(isset($_POST['selectOption'])){
+    //      $selectOption = $_POST['cars'];
+    //      $insert = "INSERT INTO `selectoption`(`carName`) VALUES ('$selectOption')";
+    //      $insertQuery = mysqli_query($connection, $insert);
+    //      mysqli_close($connection);
+    //      echo"successfully Car submit";
+
+    // }
+
+
+
+    // Check BOX
+    
+     if(isset($_POST['checkBox'])){
+         $checkBox = $_POST['vehicles'];
+         for ($i = 0; $i <sizeof($checkBox); $i++) {
+         $insert = "INSERT INTO `checkbox`(`Vehicles`) VALUES ('$checkBox[$i]')";
+         $insertQuery = mysqli_query($connection, $insert);
+         }
+         mysqli_close($connection);
+         echo"successfully Checkbox submit";
+    }
 ?>
