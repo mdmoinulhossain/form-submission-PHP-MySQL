@@ -1,0 +1,146 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 11, 2022 at 10:44 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `php`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `checkbox`
+--
+
+CREATE TABLE `checkbox` (
+  `id` int(11) NOT NULL,
+  `Vehicles` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `checkbox`
+--
+
+INSERT INTO `checkbox` (`id`, `Vehicles`) VALUES
+(12, 'Bike'),
+(13, 'Car'),
+(14, 'Boat'),
+(15, 'Car'),
+(16, 'Boat');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `input_submit`
+--
+
+CREATE TABLE `input_submit` (
+  `id` int(11) NOT NULL,
+  `date_auto` timestamp NOT NULL DEFAULT current_timestamp(),
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` int(14) NOT NULL,
+  `age` int(2) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `selectValue` varchar(100) NOT NULL,
+  `language` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `input_submit`
+--
+
+INSERT INTO `input_submit` (`id`, `date_auto`, `name`, `email`, `phone`, `age`, `password`, `selectValue`, `language`) VALUES
+(1, '2022-06-10 14:48:28', 'moinul', 'moinul@gmail.com', 1681894386, 26, '100#', '', ''),
+(2, '2022-06-10 14:50:31', 'hossain', 'hossain@gmail.com', 1681894386, 26, '100@', '', ''),
+(3, '2022-06-11 12:03:06', 'Zahid', 'xahid@gmail.com', 1254798963, 50, '789654', 'opel', ''),
+(4, '2022-06-11 12:04:44', 'Zahid', 'xahid@gmail.com', 1254798963, 50, '789654', 'opel', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `radio`
+--
+
+CREATE TABLE `radio` (
+  `language` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `radio`
+--
+
+INSERT INTO `radio` (`language`) VALUES
+('CSS'),
+('JavaScript');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `selectoption`
+--
+
+CREATE TABLE `selectoption` (
+  `carName` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `selectoption`
+--
+
+INSERT INTO `selectoption` (`carName`) VALUES
+('opel'),
+('audi'),
+('audi');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `checkbox`
+--
+ALTER TABLE `checkbox`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `input_submit`
+--
+ALTER TABLE `input_submit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `checkbox`
+--
+ALTER TABLE `checkbox`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `input_submit`
+--
+ALTER TABLE `input_submit`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
